@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/people/static/css/bootstrap.css">
+    <title>SWIFTSearch</title>    
+    <style>
+    .search {
+        width: 100%;
+        max-width: 38%;
+        padding: 15px;
+        padding-top: 0px;
+        margin: auto;
+    }
+    
+    html, body {
+        height: 100%;
+        background: #f5f5f5;
+    }
+    
+    .search-container {
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-align: center;
+        align-items: center;
+        padding-top: 40px;
+        padding-bottom: 40px;
+        background-color: #f5f5f5;
+    }
+    
+    .btn {
+        border-color: #786e6c;
+        margin-left: 1em;
+        background-color: #786e6c;
+    }
+    
+    .btn:hover {
+        background-color: #879193;
+    }
+    
+    .btn-tag {
+        margin-left: 0px !important;
+        background: rgb(255, 102, 51);;
+        color: white !important;
+        border-color: rgb(255, 102, 51);;
+     }   
+    
+    .container-fluid {
+        background-color: rgb(90, 78, 72);;
+    }
+    
+    .nav-link {
+        color: white;
+    }
+    
+    .nav-link:hover {
+        color: rgb(242, 148, 0);
+    }
+    
+    .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+        background-color: rgb(242, 148, 0);
+    }    
+    </style>
+  </head>
+  <body>
+    <div class="container-fluid">
+        <ul class="nav nav-pills" style="padding-top: 8px; padding-bottom: 8px">
+            <li class="nav-item">
+                <a class="nav-link" href="/people/">Search</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/people/teams-list/">Teams</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" href="/people/employees-list/">Employees</a>
+            </li>
+        </ul>
+    </div>
+  
+    <div class="container">
+        <br />
+        <div class="card" style="width: 100%;">
+            <div class="card-body">
+                <div style="width: 25%" class="float-left">
+                    <img src="https://via.placeholder.com/250x250" class="rounded-circle img-fluid border border-dark" style="width: 80%; height: auto; margin-bottom: .75em;" />
+                    <h4 class="card-title">{{employee.last_name}}, {{employee.first_name}}</h4>
+                    <h5 class="card-subtitle mb-2 text-muted">{{employee.location}}</h5>
+                </div>
+                <div class="float-left" style="width: 70%;">
+                    <p class="card-text"><a href="/people/teams/{{team.id}}">{{team.teamName}}</a><br />
+                        <em>{{employee.position}}</em><br />
+                        <br /><br />
+                        <b>Alma Mater:</b> {{employee.alma_mater}}<br />
+                        <b>Hire Date:</b> June 4th 2018 <br />
+                    </p>
+                </div>
+            </div>
+        </div>
+        <br />
+        <div class="card" style="width: 100%;">
+            <div class="card-body">
+                <h4 style="font-weight: 700">Skills:</h4>
+                {% for skill in skills %}
+                <a type="button" class="btn btn-tag">{{skill}}</a>
+                {% endfor %}
+                <br /><br /><h4><span style="font-weight: 700">CoE:</span> {{employee.COE}}</h4>
+            </div>
+        </div>
+        
+    </div>
+    
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="/people/static/js/jquery.min.js"></script>
+    <script src="/people/static/js/bootstrap.min.js"></script>
+  </body>
+</html> 

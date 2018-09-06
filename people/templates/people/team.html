@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/people/static/css/bootstrap.css">
+    <title>SWIFTSearch Team: {{team.teamName}}</title>
+    <script src="/people/static/treant/vendor/raphael.js"></script>
+    <script src="/people/static/treant/treant.js"></script>
+    <link rel="stylesheet" href="/people/static/treant/treant.css" type="text/css"/>
+    <style>
+    .search {
+        width: 100%;
+        max-width: 38%;
+        padding: 15px;
+        padding-top: 0px;
+        margin: auto;
+    }
+    
+    html, body {
+        height: 100%;
+        background: #f5f5f5;
+    }
+    
+    .search-container {
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-align: center;
+        align-items: center;
+        padding-top: 40px;
+        padding-bottom: 40px;
+        background-color: #f5f5f5;
+    }
+    
+    .btn {
+        border-color: #786e6c;
+        margin-left: 1em;
+        background-color: #786e6c;
+    }
+    
+    .btn:hover {
+        background-color: #879193;
+    }
+    
+    .btn-tag {
+        margin-left: 0px !important;
+        background: rgb(255, 102, 51);;
+        color: white !important;
+        border-color: rgb(255, 102, 51);;
+     }   
+    
+    .container-fluid {
+        background-color: rgb(90, 78, 72);;
+    }
+    
+    .nav-link {
+        color: white;
+    }
+    
+    .nav-link:hover {
+        color: rgb(242, 148, 0);
+    }
+    
+    .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+        background-color: rgb(242, 148, 0);
+    }    
+    </style>
+  </head>
+  <body>
+    <div class="container-fluid">
+        <ul class="nav nav-pills" style="padding-top: 8px; padding-bottom: 8px">
+            <li class="nav-item">
+                <a class="nav-link" href="/people/">Search</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" href="/people/teams-list/">Teams</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/people/employees-list/">Employees</a>
+            </li>
+        </ul>
+    </div>
+  
+    <div class="container">
+        <br />
+        <div class="card" style="width: 100%;">
+            <div class="card-body">
+                <h4 style="font-weight: 700">{{team.teamName}}</h4>
+                <h4 class="text-muted">{{team.department}}</h4>
+                <div class="chart" id="basic-example" style="width: 100%; height: auto"></div>
+                <script>
+                    var chart_config = {
+        chart: {
+            container: "#basic-example",
+            
+            connectors: {
+                type: 'step'
+            },
+            node: {
+                HTMLclass: 'nodeExample1'
+            }
+        },
+        nodeStructure: {
+            text: {
+                name: "NUVAL Nate",
+                title: "Mentor"
+            },
+            image: "https://via.placeholder.com/64x68",
+            children: [
+                {
+                    text:{
+                        name: "BIMMER Richard",
+                        title: "Test Automation",
+                    },
+                    stackChildren: false,
+                    image: "https://via.placeholder.com/64x68"
+                },
+                {
+                    stackChildren: false,
+                    text:{
+                        name: "JOSHI Malika",
+                        title: "Cybersecurity",
+                    },
+                    image: "https://via.placeholder.com/64x68"
+                },
+                {
+                    stackChildren: false,
+                    text:{
+                        name: "SELIK Mark",
+                        title: "Infastructure Architect"
+                    },
+                    image: "https://via.placeholder.com/64x68"
+                },
+                {
+                    stackChildren: false,
+                    text: {
+                        name: "WONG Johnny",
+                        title: "Java Developer"
+                    },
+                    image: "https://via.placeholder.com/64x68"
+                },
+                {
+                    stackChildren: false,
+                    text: {
+                        name: "ALIMOV Mansour",
+                        title: "Java Developer"
+                    },
+                    image: "https://via.placeholder.com/64x68"
+                }    
+            ]
+        }
+    };
+    
+    new Treant( chart_config );
+    </script>
+    <style>
+    body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td { margin:0; padding:0; }
+table { border-collapse:collapse; border-spacing:0; }
+fieldset,img { border:0; }
+address,caption,cite,code,dfn,em,strong,th,var { font-style:normal; font-weight:normal; }
+caption,th { text-align:left; }
+h1,h2,h3,h4,h5,h6 { font-size:100%; font-weight:normal; }
+q:before,q:after { content:''; }
+abbr,acronym { border:0; }
+
+/* optional Container STYLES */
+.chart { height: 600px; margin: 5px; width: 900px; }
+.Treant > .node {  }
+.Treant > p { font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; font-weight: bold; font-size: 12px; }
+.node-name { font-weight: bold;}
+
+.nodeExample1 {
+    padding: 2px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    background-color: #ffffff;
+    border: 1px solid #000;
+    width: 200px;
+    font-family: Tahoma;
+    font-size: 12px;
+}
+
+.nodeExample1 img {
+    margin-right:  10px;
+}</style>
+    
+            </div>
+        </div>
+    </div>
+    
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="/people/static/js/jquery.min.js"></script>
+    <script src="/people/static/js/bootstrap.min.js"></script>
+  </body>
+</html> 
